@@ -20,20 +20,19 @@ class Axios extends React.Component {
         url,
         method,
         data,
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
+        headers: { 'X-Requested-With': 'XMLHttpRequest' },
         cancelToken: new axios.CancelToken(token => {
           this.cancelToken = token;
         }),
       })
-        .then(res => {
+        .then((res) => {
           this.cancelToken = null;
-          console.log(res.data)
           this.setState({
-            data: res.data,
+            data: res.data.results.docs,
             loading: false,
             error: false,
           });
-          
+
         })
         .catch(e => {
           // Early return if request was cancelled

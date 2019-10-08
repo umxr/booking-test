@@ -43,7 +43,7 @@ const Item = styled('li')(
 const onAttention = '&:hover, &:focus';
 const Input = styled('input')(
   {
-    width: '100%', // full width - icon width/2 - border
+    width: 458,
     fontSize: 14,
     wordWrap: 'break-word',
     lineHeight: '1em',
@@ -66,12 +66,12 @@ const Input = styled('input')(
   ({ isOpen }) =>
     isOpen
       ? {
-          borderBottomLeftRadius: '0',
-          borderBottomRightRadius: '0',
-          [onAttention]: {
-            boxShadow: 'none',
-          },
-        }
+        borderBottomLeftRadius: '0',
+        borderBottomRightRadius: '0',
+        [onAttention]: {
+          boxShadow: 'none',
+        },
+      }
       : null
 );
 
@@ -112,13 +112,10 @@ const Menu = React.forwardRef((props, ref) => (
 ));
 
 
-const itemToString = i => (i ? i.name : '');
-
 export {
   Menu,
   Input,
   Item,
   Label,
   css,
-  itemToString,
 };
